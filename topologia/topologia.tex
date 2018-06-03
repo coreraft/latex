@@ -1,0 +1,165 @@
+\documentclass[letterpaper]{article}
+
+%% Language and font encodings
+\usepackage[spanish]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\usepackage{amsmath,amssymb}
+\makeatletter
+\newsavebox\myboxA
+\newsavebox\myboxB
+\newlength\mylenA
+
+\newcommand*\xoverline[2][0.75]{%
+    \sbox{\myboxA}{$\m@th#2$}%
+    \setbox\myboxB\null% Phantom box
+    \ht\myboxB=\ht\myboxA%
+    \dp\myboxB=\dp\myboxA%
+    \wd\myboxB=#1\wd\myboxA% Scale phantom
+    \sbox\myboxB{$\m@th\overline{\copy\myboxB}$}%  Overlined phantom
+    \setlength\mylenA{\the\wd\myboxA}%   calc width diff
+    \addtolength\mylenA{-\the\wd\myboxB}%
+    \ifdim\wd\myboxB<\wd\myboxA%
+       \rlap{\hskip 0.5\mylenA\usebox\myboxB}{\usebox\myboxA}%
+    \else
+        \hskip -0.5\mylenA\rlap{\usebox\myboxA}{\hskip 0.5\mylenA\usebox\myboxB}%
+    \fi}
+\makeatother
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\title{Topolog\'ia 2018-1 Taller 2 }
+\author{Juan Sebasti\'an Gait\'an Escarpeta}
+
+\begin{document}
+\maketitle
+\section{Armstrong}
+\subsection*{P\'agina 72}
+\subsection*{Ejercicio 5}
+Sea $X$ la uni\'on de todos los circulos de la porma $(x-\frac{1}{n})^2+y²=\frac{1}{n}$ para $n \in \{1,2,...\}$ con la topolog\'ia subespacio del plano. Sea $Y$ el conjunto de los n\'umeros reales identificando los enteros a un \'unico punto. Demuestre que $X$ y $Y$ no son homeomorfos.
+\begin{proof}
+Veamos que $X$ es compacto. Sea $\{U_\alpha\}$ una cobertura abierta de $X$. Entonces existe ${U_\alpha}_i$ tan que $(0,0)\in {U_\alpha}_i$. Entonces exite $N \in \mathbb{N}$ tan que ${U_\alpha}_i$ contiene todos los circulos de la forma $(x-\frac{1}{k})²+y² = \frac{1}{k}$ siempre que $k > N$. El conjunto $X\setminus{U_\alpha}_i$ es homeomorfo a la uni\'on de finitos intervalos compactos y por lo tantop $\{U_\alpha\} $ tiene una subcobertura finita.\\
+Ahora, considere los conjuntos $W_n = (n+ \frac{1}{10}, n-\frac{1}{10})$ para $n\in \mathbb{Z}$ y sea $V =(\frac{-1}{5},\frac{1}{5})$. Entonces la imagen de $W_n \cup V$ bajo la relaci\'on de $Y$ forma una cobertura abierta para $Y$; note que $\frac{2k+1}{2}$ est\'a en un \'unico $W_n$ por lo tanto $W_n \cup V$ no tiene una subcovertura finita.
+\end{proof}
+\subsubsection*{Ejercicio 11}
+Demuestre que  la funci\'on  $f:[0,2\pi ]\times [0,\pi ] \rightarrow \mathbb{R}^5$ definida por:
+\begin{equation*}
+f(x,y)=(\cos x, \cos 2y, \sin  2y, \sin x  \cos y,  \sin x  \cos y, \sin x \sin y)
+\end{equation*}
+Induce un encajamiento de la botella de Klein en $\mathbb{R}^5$
+\begin{proof}
+Sea $Y=[0,2\pi ]\times [0,\pi]$ y sea $X=f(Y)\subseteq \mathbb{R}^5$. Como   $\mathbb{R}^5$ es un espacio de Hausdorff y un subespacio de un espacio de Hausdorff es de Hausdorff, entonces $X$ es de Hausdorff. Adem\'as $Y$ es compacto. Y por lo tanto, $f$ es de identificaci\'on restringiendo el  codominio a la im\'agen. Es claro  que la botella de Klein se obtiene identificando dos lados de $Y$  en la misma  direcci\'on y dos lados en direcci\'on contraria.\\
+Primero, note que $f$ identificalas cuatro esquinas de $Y$ juntas. Veamos que pasa con los dem\'as puntos del borde.
+Suponga que $f(x_1,y_1)=f(x_2,y_2)$. Primero, supongamos  que $y_1 \neq   y_2$ y asuma que  $y_1, y_2 \in (0,\pi).$  Usando el gr\'afico de   $\sin(x)$ sabemos que si $\sin 2y_1=\sin 2y_2$ entonces  al;guna  de las dos siguientes afirmaciones son  ciertas: (i)$0<2y_1, 2y_2<\pi$ y $2y_1=\pi-2y_2$ \'o (ii)$0<2y_1, 2y_2<2\pi$ y $2y_1=3\pi-2y_2$. Ahora, $\cos 2y_1=\cos 2y_2$ implica $y_1=\pi-y_2$.  Pero esto contradice (i) y (ii). Como $y_1 \neq   y_2$ entonces alguno entre $y_1$ y $y_2$ es $0$ o $\pi$. Como $y_1=\pi-y_2$ entonces si $y_1=0$ entonces $y_2=\pi$ y viceversa. Esto demuestra que si $f(x_1,y_1)=f(x_2,y_2)$ entonces alguno de los dos puntos est\'a en la parte superior del rect\'angulo y el otro en la parte inferior.\\
+Suponga ahora que $f(a,0)=f(b,\pi)$. Suponga adem\'as que $0<a,b<2\pi$. Entonces tenemos $\cos a =\cos b$ y $\sin a=-\sin b$. Como $\cos a =\cos b$ entonces o $a=b$ \'o $a=2\pi-b$. Como $\sin a=-\sin b$, entonces el unico caso viable de los dos anteriores es $a=2\pi-b$. con esto demostramos que si $f(x_1,y_1)=f(x_2,y_2)$ con  $y_1\neq y_2$ entonces $(x_1,y_1)=(0,x)$ y $(x_2,y_2)=(2\pi-x,\pi)$.
+De forma an\'aloga es posible demostrar que si $f(x_1,y_1)=f(x_2,y_2)$ con  $x_1\neq x_2$ entonces $y_1=y_2$. Estas son exactamente las identificaciones de la botella de Kein.
+\end{proof}
+
+\subsubsection*{Ejercicio  12}
+Con la notaci\'on del ejercicio 11, demuestre que si $(2+\cos x)\cos 2y=(2+\cos x')\cos 2y'$ y $(2 + \cos x) \sin 2y=(2+\cos x') \sin 2y'$, entonces $\cos x=\cos x'$, $\cos 2y=\cos 2y'$ y $\sin 2y=\sin 2y'$. Deduzca que la funci\'on  $g:[0,2\pi ] \times [0, \pi ] \rightarrow \mathbb{R}^{4}$ dada por $ g(x, y) = ((2 + \cos x) \cos 2y, (2 + \cos x) \sin 2y,\sin x\cos y,\sin x \sin y)$ induce un encajamiento de  la botella de Klein en $\mathbb{R}^4$.
+\begin{proof}
+\begin{itemize}
+\item Caso 1: $\{y,y'\}\cap \{\frac{\pi}{4}, \frac{3\pi}{4}\}=\emptyset$. Entonces $\cos 2y\neq 0 $. Podemos dividir $(2+\cos x)\cos 2y=(2+\cos x')\cos 2y'$ por $(2 + \cos x) \sin 2y=(2+\cos x') \sin 2y'$  para obtener que $\tan 2y=\tan 2y'$. Para $y, y' \in [0,\pi ]$  esto solo es  posible si $y=y'$. En  cuyo caso, se   sigue $\cos x=\cos x'$, $\cos 2y=\cos 2y'$ y $\sin 2y=\sin 2y'$.
+\item Caso 2; $\{y,y'\}\cap \{\frac{\pi}{4}, \frac{3\pi}{4}\}\neq \emptyset$. Si  $y=\frac{\pi}{4}$, entonces,  usando $(2+\cos x)\cos 2y=(2+\cos x')\cos 2y'$ se tiene $y'=\frac{\pi}{4}$ \'o $y'=\frac{3\pi}{4}$. Pero  si $y'=\frac{3\pi}{4}$ entonces es  falso que  $(2 + \cos x) \sin 2y=(2+\cos x') \sin 2y'$. Entonces $y=y'=\frac{\pi}{4}$. En cuyo caso, se  tienen los resultados.  Ahora,  si $y=\frac{3\pi}{4}$. Entonces, igual que en la parte anterior, $y'=\frac{\pi}{4}$ \'o $y'=\frac{3\pi}{4}$ e  igual que  en el caso anterior, si $y'=\frac{\pi}{4}$ es  falso que  $(2 + \cos x) \sin 2y=(2+\cos x') \sin 2y'$   y por lo tanto $y=y'=\frac{3\pi}{4}$ y por lo tanto se tiene  el resultado.\\
+Ahora, sea $f$ la funci\'on definida  en  el problema 11. Entonces  $g$ es  una funci\'on cociente por la misma raz\'on que $f$ lo es  y por lo  que acabamos de  demosatrar, $g(x_1, y_1) = g(x_2, y_2) \Leftrightarrow  f(x_1, y_1) = f(x_2, y_2)$. Y por lo tanto, el espacio cociente de $f$ es el mismo que el de $g$  y por lo tanto la im\'agen de $f$ es  la  misma que la de $g$ (la botella de  Klein).
+\end{itemize}
+\end{proof}
+\subsection{P\'agina 78}
+\subsubsection*{Ejercicio 14}
+\begin{proof}
+Sea $f:G\times G\rightarrow G$ tal que $f(x,y)=xy^{-1}$. Como $G$ es grupo topol\'ogico, entonces $f$ es continua. por lo tanto $f^{-1}(\bar{H})$ es cerrado. Como $H$ es grupo, entonces $H\times H \subseteq f^{-1}(\bar{H})$, tomando clausuras, se tiene $\overline{H\times H} \subseteq f^{-1}(\bar{H})$  y como $\xoverline[]{H \times H}=\xoverline{H}\times \overline{H}$, entonces $f(\overline{H}\times \overline{H})\subseteq\overline{H}$. De donde $\overline{H}$ es  subgrupo de $G$. \\
+Veamos que si $H$ es normal, entonces $\overline{H}$ tambi\'en lo es. Sea $g:G\times G  \rightarrow G$ tal que $g(x,y)=xyx^{-1}$. Como $G$ es grupo topol\'ogico, entonces $g$ es continua y por tanto, $g^{-1}(\overline{H})$ es cerrado. Como  $H$ es normal, entonces $G\times H \subseteq g^{-1}(\overline{H})$. Tomando clausuras $\overline{G\times H} \subseteq g^{-1}(\overline{H})$.  Y como  $\overline{G\times H}= \overline{G}\times \overline{G}=G\times \overline{H}$, entonces $g(G\times \overline{H})\subseteq \overline{H}$. Por lo tanto $\overline{H}$ es normal en $G$.
+\end{proof}
+\subsubsection*{Ejercicio 17}
+Sean $A,B$ subconjuntos compactos de un espacio topol\'ogico. Demuestre que $AB=\{ab | a\in A, b\in B\}$ es compacto.
+\begin{proof}
+Considere el mapa producto $p:G\times G\rightarrow G$. p es continua. Como $A\times B$ es compacto en la topolig\'ia producto, entonces $p(A,B)=AB$ lo es.
+\end{proof}
+\subsubsection*{Ejercicio 21}
+Demuestre que todo subgrupo discreto no trivial de $\mathbb{R}$ es infinito c\'iclico
+\begin{proof}
+Sea $H$ un subgrupo discreto no trivial de $\mathbb{R}$. Sea $h=\inf_{r}\{r\in H, r>0\}$. Por el ejercicio anterior, $h\in H$. Claramente, $\left<h\right> \subseteq H$. Suponga que existe $b\in H$ con $b\notin \left<h\right> $. entonces existe $n\in \mathbb{N}$ tal que $nh<b<(n+1)h$ entonces $0<b-nh<h$ y $b-nhb\in H$ pero $h$ era el menor real positivo en $H$, esto es una contraducci\'on, por lo  tanto  $\left<h\right> = H$.
+\end{proof}
+\subsection*{P\'agina  86}
+\subsubsection*{Ejercicio 34}
+Demuestre que $L(2,1)$ es homeomorfo a $\mathbb{P}_3$, adem\'as, que si $p$ divide a $q-q'$ entonces $L(p,q)$ es homeomorfo a $L(p,q')$
+\begin{proof}
+$L(2,1)$ se define como el espacio orbita de $S^3$ identificando $(z_o,z_1)\sim (e^{i\pi}z_0,e^{i\pi}z_1)$ pero como   $(e^{i\pi}z_0,e^{i\pi}z_1)=(-z_o,-z_1)$, esto es  simplemente la esfera  con identificaci\'on antipodal, es decir, $\mathbb{P}_3$.\\
+Ahora, suponga que $p|(q-q')$. Entonces $q=q'+np$ para alg\'un $n\in \mathbb{N}$. Entonces $e^{2\pi \frac{qi}{p}}=e^{2\pi(q'+np)\frac{i}{p}}= e^{\frac{2i\pi q'}{p}+\frac{2i\pi np}{p}}=e^{2\pi q'\frac{i}{p}}$. Por lo tanto la acci\'on de $\mathbb{Z}_p    $ es la misma en ambos casos.
+\end{proof}
+\section*{Munkres}
+\subsection*{P\'agina 271}
+\subsubsection*{Ejercicio  6}
+Un espacio $X$ se dice topol\'ogicamente completo si  existe una metrica para la topolog\'ia de $X$ para la cual $X$ es  completo.
+\begin{itemize}
+\item Muestre que un subespacio cerrado de un espacio topol\'ogicamente  completo es  topol\'ogicamente completo.
+\begin{proof}
+Sea $X$ Topol\'ogicamente completo. Entonces,existe una m\'etrica $d$ con la cual $(X,d)$ es completo. Todo subespacio cerrado de un espacio completo es completo.
+\end{proof}
+\item Muestre que el producto contable de espacio topol\'ogicamente completo es  topol\'ogicamente completo en la topolog\'ia producto.
+\begin{proof}
+Sea $X=\prod _{ n=0 }^{ \infty  }{ { X }_{ n } } $ con la topolog\'ia producto. Como todos los $X_i$ son topol\'ogicamente completos, entonces para cada uno existe una distancia $d_i$ tal que $(X_i,d_i)$ es completo. Defina la funci\'on $\overline{d_i}(x_i,y_i)=\sup \{1,d_i(x_i,y_i)\}$. La funci\'on $d(x,y)=\sup _{i\in \mathbb{N}}\{ \overline{d}_i(x^i,y^i)\}$  donde  $x^i$ es la $i-$\'esima componente de $x\in X$ define una distancia en $X$.\\
+Sea $\{x_j\}_{j\in \mathbb{N}} $ una sucesi\'on de Cauchy   en $X$. Entonces dado  $\varepsilon >0$ existe un $N \in \mathbb{N}$ tal que si $m,n> N$ entonces $\sup _{i\in \mathbb{N}}\{ \overline{d}_i({x_n}^i,{x_m}^i)\}<\varepsilon$. Y por lo tanto para todo $i\in \mathbb{N}$ cada sucesi\'on $\{{x_m}^i\}_{m\in \mathbb{N}}$  (fijando la componente y variando el elemento de $\{x_j\}_{j\in \mathbb{N}} $) cumple que $d_i({x_m}^i,{x_n}^i)<\varepsilon$ para  $m,n> N$ luego son de Cauchy, y como $X_i$ es completo, entonces $\{{x_m}^i\}_{m\in \mathbb{N}}$ converge . Como cada componente converge entonces  $\{x_j\}_{j\in \mathbb{N}} $ converge.
+\end{proof}
+\item Muestre que un subespacio abierto de un espacio topol\'ogicamente completo es topol\'ogicamente  completo.
+\begin{lemma}
+Todo subespacio $U$ abierto de un espacio completo  $(X,d)$ es homeomorfo  a un espacio completo.
+\end{lemma}
+\begin{proof}
+Sea $U$ un subconjunto abierto de $X$ y $d$ la m\'etrica sobre $d$. Defina:
+\begin{equation*}
+f:U \rightarrow  \mathbb{R}:x\mapsto \frac{1}{d(x,X\setminus U)}
+\end{equation*}
+Como $f$ es continua, ahora defina:
+\begin{equation*}
+\rho : U \times U \rightarrow \mathbb{R}:(x,y)\mapsto d(x,y)+|f(x)-f(y)|
+\end{equation*}
+$\rho$ define una metrica en $U$.  Es posible  ver que $(U,\rho)$ es completo. La idea intuituva es descartar las sucesiones de Cauchy en $U$ cuyos l\'imites  caen en $X\setminus U$; $f(x)$ es muy grande cuando $x$ est\'a cerca de la frontera de $U$. Entonces a\~ nadir $|f(x)-f(y)|$ hace que las sucesiones que convergen en $X \setminus U$ no sean de Cauchy.
+\end{proof}
+\end{itemize}
+
+
+
+\subsubsection{Ejercicio 8 }
+Sean $X$ y $Y$ espacios. Considere la funci\'on $e:X\times \textit{C}(X,Y)\rightarrow Y$ tal que $e(x,\phi)=\phi(x)$. Sea $d$ una m\'etrica para $Y$ y dote a $\textit{C}(X,Y)$ de la correspondiente topolog\'ia uniforme. Demuestre que  $e$ es continua.
+\begin{proof}
+Sea $A \subseteq_{ab} Y$. Veamos que $e^{-1}(A)$ es abierto en $X\times \textit{C}(X,Y)$. Sea $(x_0,\phi_0)  \in e^{-1}(A)$. Sea $V$ una vecindad de $x_{0}$  tal que $\phi_{0}(V)\subseteq A$ y defina  $\varepsilon=\sup\{\overline{d}(\phi_0(x),a) \quad | \quad a \in A, x\in V\}$ y considere el conjunto:
+\begin{equation*}
+W=\{\varphi\in \textit{C}(X,Y)\quad|\quad \overline{\rho}(\varphi, \phi _{0})<\varepsilon \}
+\end{equation*}
+
+El conjunto $V\times W$ es una vecindad de $(x_0,\phi_0)$ en $e^{-1}(A)$ y por  lo tanto $e^{-1}(A)$ es abierto.
+\end{proof}
+\subsection*{P\'agina 280}
+\subsubsection*{Ejercicio 2}
+Sea $(Y,d)$ un espacio m\'etrico. Sea $F$  un subconjunto de $\textit{C}(X,Y)$.
+\begin{itemize}
+\item Muestre que si $F$ es finito entonces es equicontinuo.
+\begin{proof}
+Sea $x_0\in X$. Dado $\varepsilon > 0$. Para cada $f\in F \subseteq C(X,Y)$ existe una vecindad abierta $U_{f}$ tal  que para todo $x\in U_{f}$, se  tiene $d(f(x), f(x_0))< \varepsilon$. Considere $V= \bigcap_{f\in F}{U_{f}}$. Como $F$ es finito, entonces $V$ es abierto. 
+\end{proof}
+\item Muestre que si $f_n$ es una sucesi\'on de elementos de $\textit{C}(X,Y)$  que convergen uniformemente, entonces la colecci\'on $\{f_n\}$ es equicontinua.
+\begin{proof}
+Sea $x_0\in X$.sea $\varepsilon>0$. Tome $f_i \in \{f_n\}$ y  llame $f$   al l\'imite de la sucesi\'on de funciones.  Entonces:\\
+\begin{itemize}
+\item Caso 1: $d(f_i(x_0),f(x_0))<\frac{\varepsilon}{3}$ entonces existe una vecindad $V_1$  de $x_0$  tal  que si $x\in V_1$ entonces $d(f_i(x),f(x))<\frac{\varepsilon}{3}$ y adem\'as, $d(f(x),f(x_0))<\frac{\varepsilon}{3}$ y usando la desigualdad triangular, se tiene 
+\begin{equation*}
+d(f_i(x),f_i(x_0))<d(f_i(x),f(x))+d(f(x),f(x_0))+d(f_i(x_0),f(x_0))<\frac{\varepsilon}{3}+\frac{\varepsilon}{3}+\frac{\varepsilon}{3}=\varepsilon
+\end{equation*}
+\item  Caso 2: $d(f_i(x_0),f(x_0))\geq \frac{\varepsilon}{3}$. Entonces, como  $f_n$ converge uniformemente, el conjunto $F'=\{ f_j\in \{ f_n\} \quad | \quad (f_j(x_0),f(x_0))\geq \frac{\varepsilon}{3} \}$ es  finito, por el ejercicio anterior, existe una vecindad abierta $V_2$ de $x_0$ tal que si $x\in V_2$, entonces $d(f_i(x), f_i(x_0))<\varepsilon$ para todo $f_i \in F'$.\\
+\end{itemize}
+Tome $V=V_1 \cap V_2$. Entonces dado $\varepsilon > 0$, si $x \in V$ y $f_i \in (f_n)$ entonces $d(f_i(x), f_i(x_0)) > \varepsilon$. Claramete, como $V_1$ es abierto, $V_2$ es abierto y $x_0 \in V_1$, $x_0 \in V_2$, entonces $V$ es abierto no vac\'io.
+\end{proof}
+
+\end{itemize}
+\end{document}
