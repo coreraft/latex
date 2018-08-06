@@ -102,31 +102,17 @@ y como $\tau'(s)=\frac{1}{\sigma'(\tau(s))}=\frac{1}{|\gamma'(t)|}$, entonces:
 
 \end{proof}
 
-\subsection*{Ejercicio 2.7}
+\subsection*{Ejercicio 3.7}
 Sea $\gamma : \mathbb R \rightarrow \mathbb R^3$ una $C^2$-curva regular cerrada en $\mathbb R ^3$ con parametrizaci\'on natural. busque una demostraci\'on del teorema de Fenchel:
 \begin{equation*}
 L(\dot{\gamma})\int_{0}^{P} \kappa(s)ds \geq 2\pi
 \end{equation*}
 \begin{proof}
-Como la curva es regular es posible escoger una parametrizaci\'on por longitud de arco tal que $\dot{\gamma}(0)=(1,0)$ (Esto es posible por ser una curva cerrada). Por el teorema de Hopf Umlaufsatz: %gama con puntico
-\begin{equation*}
-(\theta(b)-\theta(a))=2\pi
-\end{equation*}
-Donde $\theta(t)=\int_{0}^{t} k(u) du$. Como la curva se recorre completa en el intervalo (0,L) es posible tomar $b=L$ y $a=0$ luego:
-\begin{equation*}
-\theta(L)-\theta(0)=2\pi
-\end{equation*}
-Como $\dot{\gamma}(0)=(1,0)$, entonces $\theta(0)=0$, luego: %gama con puntito
-\begin{equation*}
-\theta(L)=2\pi
-\end{equation*}
-Y por lo tanto
-\begin{equation*}
-\int_{0}^{L} k(u) du = 2\pi.
-\end{equation*}
+Sea $\gamma : [0, l] \rightarrow \mathbb R ^3$ un a curva regular parametrizada por longitud de arco. Como $\gamma$ tiene velocidad unitaria, su funci\'on velocidad $\textbf{v}$, es una curva en $S^2$. \\
+Vamos a usar el hecho de que $\gamma $ es cerrada para demostrar que la curva geom\'etrica que describe $\textbf{v}$ interseca a todo circulo maximal de $S^2$. Para esto, sea $P \subseteq \mathbb R ^3$ un subespacio bidimensional arbitrario tal que $G=P \cap S^2$ es un ciculo maximal. Denote por $\textbf{n}$ el vector normal de $P$. Note que un punto en $S^2$ est\'a en $G$ si y solo si es ortogonal a $\textbf{n}$. Como $\frac{d}{dt}\langle \gamma(t), \textbf{n} \rangle=\langle \textbf{v} (t),\textbf{n}\rangle $, y por el teorema fundamental del calculo, se tiene:\\
+ $$ \int_{0}^{l}{\langle \textbf{v}(t),\textbf{n} \rangle}dt = \langle \gamma (l),\textbf{n}\rangle -\langle \gamma (0), \textbf{n} \rangle = 0   $$.
+ Como el valor medio de $\langle \textbf{v}(t), \textbf{n} \rangle$, entonces, se tiene $\langle \textbf{v}(t_0), \textbf{n} \rangle$ para alg\'un $t_0 \in [0,l]$ y por lo tanto, $\textbf{v}$ interseca todo circulo maximal. Por el lema 2.17, se tiene que la longitud de arco de $\textbf{v}$ es mayor que $2\pi$, de dinde se tiene:
+ $$ \int_{0}^{l}{\kappa (t)}dt= \int_{0}^{l}{|\textbf{v}'(t)|}dt\geq \pi.$$
 \end{proof}
-\vspace{2in} %Leave more space for comments!
-
-\vspace{3in}
 
 \end{document}
