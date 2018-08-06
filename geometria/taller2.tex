@@ -62,45 +62,30 @@ Note que las curvas parametrizadas por $\gamma_{1}$ y  $\gamma_{2}$ son c\'ircul
 \subsection*{Ejercicio 3.5}
 Sea $\gamma : I \rightarrow \mathbb{R}^3$ un a $C^2$-curva regular en $\mathbb{R}^3$ con curvatura no nula. Entonces la torsion satisface:
 \begin{equation*}
-\tau (t)=\frac{\det [\gamma '(t), \gamma ''(t), \gamma ''' (t)]}{|\gamma'(t) \times \gamma '' (t)|^2 }
+\tau (t)=\frac{\det [\dot{\gamma}(t), \ddot{\gamma}(t),\dddot{\gamma}(t)]}{|\dot{\gamma}(t) \times \ddot{\gamma}(t)|^2 }
 \end{equation*}
 \begin{proof}
-Tome $\alpha= \gamma \circ \tau$ una reparametrizaci\'on de $\gamma$ con $\alpha: (0,L(\gamma)) \rightarrow \mathbb{R}^2$ por longitud de arco, $\gamma:I \rightarrow \mathbb{R}^2$ y $\tau: (0,L(\gamma)) \rightarrow (a,b)$ como hab\'iamos probado para curvas con parametrizaci\'on natural que $\kappa(s)_{\alpha}=<\dot{T}(s),N(s)>$ y tome $\gamma(t)=(x(t),y(t))$.
+Considere lo siguiente:
 \begin{equation*}
-\begin{split}
-T&=\dot{\alpha}\\
-T&=(\gamma \circ \tau)'(s)\\
-T&=\gamma'(\tau(s) \cdot \tau'(s))\\
-T&=(x'(\tau(s)), y'(\tau(s))\tau'(s))\\
-T(s)&=(\tau'(s)x'(\tau(s))), (\tau'(s)y'(\tau(s)))\\
-\dot{T}(s)&=[\tau''(s)x'(\tau(s)) + \tau^2(s)x''(\tau(s))\tau'(s), \tau''(s)y'(\tau(s))+\tau'(s)y''(\tau(s))\tau'(s)] \\
-&=[\tau''(s)x'(\tau(s))+(\tau'(s))^2x''(\tau(s)), \tau''(s)y'(\tau(s))+(\tau'(s))^2y''(\tau(s))]
-\end{split}
+  \begin{split}
+    \tau(s)&=\langle \dot{N}(s), B(s) \rangle = \left\langle\frac{\dddot{\gamma}(s)}{|\ddot{\gamma}(s)|}, \frac{N(s)\times T(s)}{|N(s)\times T(s)|}\right\rangle \\
+     &=\left\langle \frac{\dddot{\gamma}(s)}{|\ddot{\gamma}|}, \frac{\frac{\ddot{\gamma}(s)}{|\ddot{\gamma}|}\times \dot{\gamma}(s)}{|\frac{\ddot{\gamma}(s)}{|\ddot{\gamma}|}\times \dot{\gamma}(s)|}\right\rangle \\
+     &=\frac{\langle \dddot{\gamma}(s), \ddot{\gamma}(s)\times \dot{\gamma}(s)\rangle}{|\langle \dddot{\gamma}(s)| \cdot |\ddot{\gamma}(s)\times \dot{\gamma}(s)|} \\
+     &=\frac{\det [\dot{\gamma}(t), \ddot{\gamma}(t),\dddot{\gamma}(t)]}{|\dddot{\gamma}(s)|\cdot||\ddot{\gamma}(s)|\cdot |\dot{\gamma}(s)| \sin \frac{\pi}{2}}\\
+     &=\frac{\det [\dot{\gamma}(s), \ddot{\gamma}(s),\dddot{\gamma}(s)]}{|\dot{\gamma}(s) \times \ddot{\gamma}(s)|^2 }
+  \end{split}
 \end{equation*}
 
-Adem\'as, note que:
-\begin{equation*}
-N(s)=\begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}\begin{pmatrix} x'(\tau(s))\cdot \tau'(s)\\ y'(\tau(s))\cdot \tau'(s)\end{pmatrix}=\begin{pmatrix} -y'(\tau(s))\cdot \tau'(s)\\ x'(\tau(s))\cdot \tau'(s)\end{pmatrix}.
-\end{equation*}
-Y por lo tanto, se tiene que:
-\begin{equation*}
-\begin{split}
-\kappa (s)&=\langle \dot{T}(s),N(s) \rangle\\
-&=-y'(\tau(s))x'(\tau(s))\tau'(s)\tau''(s)-y'(\tau(s))\tau'(s)^3x''(\tau(s))+\\
-&y'(\tau(s))x'(\tau(s))\tau'(s)\tau''(s)+x'(\tau(s))\tau'(s)^3y''(\tau(s))\\
-&=[\tau'(s)]^3[x'(\tau(s))y''(\tau(s))-x'(\tau(s))x''(\tau(s))]
-\end{split}
-\end{equation*}
-y como $\tau'(s)=\frac{1}{\sigma'(\tau(s))}=\frac{1}{|\gamma'(t)|}$, entonces:
-\begin{equation*}
-\begin{split}
-\kappa(s)&=\frac{1}{|\gamma'(t)|^3}[x'(\tau(s))y''(\tau(s))-x'(\tau(s))x''(\tau(s))]\\
-&=\frac{1}{|\gamma'(t)|^3}\det\begin{pmatrix} x'(\tau(s)) & x''(\tau(s))\\ y'(\tau(s)) & y''(\tau(s))\end{pmatrix}\\
-&=\frac{1}{|\gamma'(t)|^3}\det\begin{pmatrix} x'(t) & x''(t)\\y'(t) & y''(t)\end{pmatrix}
-\end{split}
-\end{equation*}
+
 
 \end{proof}
+\subsection*{Lema}
+Sea $\beta$ una curva cerrada en $S^2$. Si la a curva geometrica dada por $\beta$ interseca todo circulo maximal de $S^2$, entonces la longitudde arco de $\beta$ es mayor a $2\pi$,
+
+\begin{proof}
+  Demostraci\'on en la p\'agina 80  de   \textit{Differential Geometry of Curves and Surfaces} de Kristopher Tapp.
+\end{proof}
+
 
 \subsection*{Ejercicio 3.7}
 Sea $\gamma : \mathbb R \rightarrow \mathbb R^3$ una $C^2$-curva regular cerrada en $\mathbb R ^3$ con parametrizaci\'on natural. busque una demostraci\'on del teorema de Fenchel:
