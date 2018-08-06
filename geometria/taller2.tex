@@ -49,10 +49,8 @@ es regular. Determine si la imagen de $\gamma$ est\'a contenida en:
   \item una linea recta en $\mathbb{R}^3$ o no.
   \item un plano en $\mathbb{R}^3$ o no.
 \end{enumerate}
-\begin{equation*}
-\gamma_{1}=r(\cos(at),\sin(at)), \text{ y } \gamma_{2}(t)=r(\cos(-at),\sin(-at))
-\end{equation*}
-Calcule las curvaturas $\kappa_{1}$ y $\kappa_{2}$ correspondientes a $\gamma_{1}$ y  $\gamma_{2}$ y encuentre un movimiento r\'igido $\Phi :\mathbb{R}^2 \rightarrow \mathbb{R}^2$ tal que $\gamma_{2}=\Phi \circ \gamma_{1}$\\
+
+
 \begin{proof}
 Note que las curvas parametrizadas por $\gamma_{1}$ y  $\gamma_{2}$ son c\'irculos y por lo tanto las curvaturas son $\frac{1}{r}$ y $\frac{-1}{r}$ respectivamente. Adem\'as, el movimiento r\'igido est\'a dado por:
 \begin{equation*}
@@ -61,10 +59,10 @@ Note que las curvas parametrizadas por $\gamma_{1}$ y  $\gamma_{2}$ son c\'ircul
 \end{proof}
 
 %Leave more space for comments!
-\subsection*{Ejercicio 2.5}
-Demuestre la formula para la curvatura para una curva regular con parametrizaci\'on arbitraria:
+\subsection*{Ejercicio 3.5}
+Sea $\gamma : I \rightarrow \mathbb{R}^3$ un a $C^2$-curva regular en $\mathbb{R}^3$. con curvatura no nula. Entonces la torsion satisface:
 \begin{equation*}
-\kappa(t)=\frac{\det[\gamma'(t),\gamma''(t)]}{|\gamma'(t)|^{3}}
+\tau (t)=\frac{\det [\gamma '(t), \gamma ''(t), \gamma ''' (t)]}{|\gamma'(t) \times \gamma '' (t)|^2 }
 \end{equation*}
 \begin{proof}
 Tome $\alpha= \gamma \circ \tau$ una reparametrizaci\'on de $\gamma$ con $\alpha: (0,L(\gamma)) \rightarrow \mathbb{R}^2$ por longitud de arco, $\gamma:I \rightarrow \mathbb{R}^2$ y $\tau: (0,L(\gamma)) \rightarrow (a,b)$ como hab\'iamos probado para curvas con parametrizaci\'on natural que $\kappa(s)_{\alpha}=<\dot{T}(s),N(s)>$ y tome $\gamma(t)=(x(t),y(t))$.
