@@ -60,7 +60,7 @@ Note que las curvas parametrizadas por $\gamma_{1}$ y  $\gamma_{2}$ son c\'ircul
 
 %Leave more space for comments!
 \subsection*{Ejercicio 3.5}
-Sea $\gamma : I \rightarrow \mathbb{R}^3$ un a $C^2$-curva regular en $\mathbb{R}^3$. con curvatura no nula. Entonces la torsion satisface:
+Sea $\gamma : I \rightarrow \mathbb{R}^3$ un a $C^2$-curva regular en $\mathbb{R}^3$ con curvatura no nula. Entonces la torsion satisface:
 \begin{equation*}
 \tau (t)=\frac{\det [\gamma '(t), \gamma ''(t), \gamma ''' (t)]}{|\gamma'(t) \times \gamma '' (t)|^2 }
 \end{equation*}
@@ -102,37 +102,10 @@ y como $\tau'(s)=\frac{1}{\sigma'(\tau(s))}=\frac{1}{|\gamma'(t)|}$, entonces:
 
 \end{proof}
 
-\subsection*{Lema: Teorema de Hopf Umlaufsatz}
-Sea $\gamma:[a,b]\rightarrow \mathbb{R}^2$ una curva simple cerrada en el plano y orientada positivamente, entonces el \'indice de totaci\'on de $\gamma$ es $1$ donde el \'indice de rotaci\'on se define: $\frac{1}{2\pi}(\theta(b)-\theta(a))$ y $\theta(t)=\int_{t_{0}}^{t} k(u) du + \theta_{0}$ donde $\dot{\gamma}(a)=(\cos (\theta_{0}), \sin (\theta_{0}))$. %punto en gama
-\begin{proof}
-Denotemos $C = \gamma[a,b]$ y sea  $p \in C$ tal que la recta tangente a $C$ en $p$ (denotada L) esta totalmente contenida a un lado de $C$ y para alguna parametrizaci\'on por longitud de arco $\gamma$, sea $\gamma(a)=p$. Considere el triangulo
-\begin{equation*}
-T={(t_{1}, t_{2})| a \leq t_{1} \leq t_{2} \leq t}
-\end{equation*}
-y definida la funci\'on $\psi:T \rightarrow S^{1}$ como sigue:
-\begin{equation*}
-\psi(t_{1},t_{2})=\begin{cases}
-\gamma'(t_{1}) & \text{ si } t_{1}=t_{2}\\
-\frac{\gamma(t_{2})-\gamma(t_{1})}{|\gamma(t_{2})-\gamma(t_{1})|} & \text{ si } t_{1} \neq t_{2} y {t_{1},t_{2}} \neq {a,b}\\
--\gamma'(a) & \text{ si } {t_{1},t_{2}}={a,b}
-\end{cases}
-\end{equation*}
-Para la mayor\'ia de elementos en el dominio $\psi(t_{1},t_{2})$ es el vector unitario apuntando de $\gamma(t_{1})$ a $\gamma(t_{2})$, y esta definici\'on asegura que $\psi$ sea continua.
-\\
-Sea $\alpha_{0}$ una parametrizaci\'on para el segmento de $(a,a)$ a $(b,b)$ con $\alpha _{1}:[0,1] \rightarrow T$ una parametrizaci\'on para el segmento de $(a,a)$ a $(a,b)$ y luego el segmento de $(a,b)$ a $(b,b)$ y $\alpha_{s}:[0,1] \rightarrow T$.\\
-Una extensi\'on con $s \in [0,1]$ que se expresa como una familia continua de funciones, esto es, si se considera la funci\'on $\beta:[0,1]\times[0,1] \rightarrow T$ tal que $\beta(s,t)=\alpha_{s}(t)$, y $\beta$ es continua.\\
-\\
-Para todo $s \in [0,1]$, sea $D(s)$ el grado de $\psi \circ \alpha_{s}:[0,1] \rightarrow S^{1}$ por el lema 2.4 de la p\'agina 63 del Tapp, $D$ es continua en $[0,1]$ y como toma valores enteros entonces $D$ es constante.$D(0)$ por definici\'on es el grado del vector tangente unitario a $\gamma$.\\
-\\
-Veamos que $D(1)=1$. Como $\alpha_{1}$ primero recorre el segmento $(a,a)$ a $(a,b)$, $\psi \circ \alpha_{1}$ recorre la mitad de $S^{1}$ y cuando $\alpha_{1}$ recorre de $(a,b)$ a $(b,b)$, $\psi \circ \alpha_{1}$ recorre la otra mitad de $S^{1}$. Luego $D(1)=1=D(0)$.\\
-\\
-Note que por la definici\'on de grado en la p\'agina 63 del Tapp, $D(0)$ es el \'indice de retaci\'on de $\gamma$.
-
-\end{proof}
 \subsection*{Ejercicio 2.7}
-Sea ${\gamma}:\mathbb{R} \rightarrow \mathbb{R}^2$ una curva simple cerrada en el plano  positivamente orientada, de tipo $C^2$ parametrizada por longitud de arco. Muestre que si el periodo de $\gamma$ es $L \in \mathbb{R}^+$ entonces la curvatura total satisface
+Sea $\gamma : \mathbb R \rightarrow \mathbb R^3$ una $C^2$-curva regular cerrada en $\mathbb R ^3$ con parametrizaci\'on natural. busque una demostraci\'on del teorema de Fenchel:
 \begin{equation*}
-\int_{0}^{L} k(s)ds = 2\pi.
+L(\dot{\gamma})\int_{0}^{P} \kappa(s)ds \geq 2\pi
 \end{equation*}
 \begin{proof}
 Como la curva es regular es posible escoger una parametrizaci\'on por longitud de arco tal que $\dot{\gamma}(0)=(1,0)$ (Esto es posible por ser una curva cerrada). Por el teorema de Hopf Umlaufsatz: %gama con puntico
