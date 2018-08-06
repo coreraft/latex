@@ -1,0 +1,161 @@
+\documentclass[12pt]{article}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{latexsym,amsfonts,amssymb,amsthm,amsmath}
+\usepackage{amsmath}
+\setlength{\parindent}{0in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.8in}
+\setlength{\topmargin}{0in}
+\setlength{\headheight}{18pt}
+
+
+
+\title{Taller de Geometr\'ia Diferencial semana 4 }
+\author{Juan Sebasti\'an Gait\'an}
+
+\begin{document}
+
+\maketitle
+
+\vspace{0.5in}
+
+
+
+\subsection*{Ejercicio 3.1}
+Para $r,a,b\in \mathbb{R}^{+}$  considere las helices parametrizadas en $\mathbb{R}^{3}$ por:
+\begin{equation*}
+\begin{split}
+\gamma_{1}&: r \mapsto (r \cdot \cos (at), r \cdot \sin (at), b \cdot (at)), \\
+\gamma_{2}&: r \mapsto (r \cdot \cos (-at), r \cdot \sin (-at) , b \cdot (at)).
+\end{split}
+\end{equation*}
+Calcule sus curvaturas $\kappa_1 , \kappa_2 $ y las torsiones $\tau_1 , \tau_2$ respectivamente. Encuentre un movimiento euclidiano $\Phi: \mathbb{R}^3 \rightarrow \mathbb{R}^3$ tal que $\gamma_2=\Phi \circ \gamma_2$. ?`$\Phi$ conserva orientaci\'on?
+\begin{proof}
+\end{proof}
+
+%Leave space for comments!
+
+
+\subsection*{Ejercicio 3.3}
+ Demuestre que la curva $\gamma :(-\frac{\pi}{2},\frac{\pi}{2}) \rightarrow \mathbb{R}^3$ con
+\begin{equation*}
+   \gamma :t \mapsto (2 \cos^2 t -3 , \sin t - 8 , 3 \sin ^2 t + 4)
+\end{equation*}
+es regular. Determine si la imagen de $\gamma$ est\'a contenida en:
+\begin{enumerate}
+  \item una linea recta en $\mathbb{R}^3$ o no.
+  \item un plano en $\mathbb{R}^3$ o no.
+\end{enumerate}
+\begin{equation*}
+\gamma_{1}=r(\cos(at),\sin(at)), \text{ y } \gamma_{2}(t)=r(\cos(-at),\sin(-at))
+\end{equation*}
+Calcule las curvaturas $\kappa_{1}$ y $\kappa_{2}$ correspondientes a $\gamma_{1}$ y  $\gamma_{2}$ y encuentre un movimiento r\'igido $\Phi :\mathbb{R}^2 \rightarrow \mathbb{R}^2$ tal que $\gamma_{2}=\Phi \circ \gamma_{1}$\\
+\begin{proof}
+Note que las curvas parametrizadas por $\gamma_{1}$ y  $\gamma_{2}$ son c\'irculos y por lo tanto las curvaturas son $\frac{1}{r}$ y $\frac{-1}{r}$ respectivamente. Adem\'as, el movimiento r\'igido est\'a dado por:
+\begin{equation*}
+\begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}.
+\end{equation*}
+\end{proof}
+
+%Leave more space for comments!
+\subsection*{Ejercicio 2.5}
+Demuestre la formula para la curvatura para una curva regular con parametrizaci\'on arbitraria:
+\begin{equation*}
+\kappa(t)=\frac{\det[\gamma'(t),\gamma''(t)]}{|\gamma'(t)|^{3}}
+\end{equation*}
+\begin{proof}
+Tome $\alpha= \gamma \circ \tau$ una reparametrizaci\'on de $\gamma$ con $\alpha: (0,L(\gamma)) \rightarrow \mathbb{R}^2$ por longitud de arco, $\gamma:I \rightarrow \mathbb{R}^2$ y $\tau: (0,L(\gamma)) \rightarrow (a,b)$ como hab\'iamos probado para curvas con parametrizaci\'on natural que $\kappa(s)_{\alpha}=<\dot{T}(s),N(s)>$ y tome $\gamma(t)=(x(t),y(t))$.
+\begin{equation*}
+\begin{split}
+T&=\dot{\alpha}\\
+T&=(\gamma \circ \tau)'(s)\\
+T&=\gamma'(\tau(s) \cdot \tau'(s))\\
+T&=(x'(\tau(s)), y'(\tau(s))\tau'(s))\\
+T(s)&=(\tau'(s)x'(\tau(s))), (\tau'(s)y'(\tau(s)))\\
+\dot{T}(s)&=[\tau''(s)x'(\tau(s)) + \tau^2(s)x''(\tau(s))\tau'(s), \tau''(s)y'(\tau(s))+\tau'(s)y''(\tau(s))\tau'(s)] \\
+&=[\tau''(s)x'(\tau(s))+(\tau'(s))^2x''(\tau(s)), \tau''(s)y'(\tau(s))+(\tau'(s))^2y''(\tau(s))]
+\end{split}
+\end{equation*}
+
+Adem\'as, note que:
+\begin{equation*}
+N(s)=\begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}\begin{pmatrix} x'(\tau(s))\cdot \tau'(s)\\ y'(\tau(s))\cdot \tau'(s)\end{pmatrix}=\begin{pmatrix} -y'(\tau(s))\cdot \tau'(s)\\ x'(\tau(s))\cdot \tau'(s)\end{pmatrix}.
+\end{equation*}
+Y por lo tanto, se tiene que:
+\begin{equation*}
+\begin{split}
+\kappa (s)&=\langle \dot{T}(s),N(s) \rangle\\
+&=-y'(\tau(s))x'(\tau(s))\tau'(s)\tau''(s)-y'(\tau(s))\tau'(s)^3x''(\tau(s))+\\
+&y'(\tau(s))x'(\tau(s))\tau'(s)\tau''(s)+x'(\tau(s))\tau'(s)^3y''(\tau(s))\\
+&=[\tau'(s)]^3[x'(\tau(s))y''(\tau(s))-x'(\tau(s))x''(\tau(s))]
+\end{split}
+\end{equation*}
+y como $\tau'(s)=\frac{1}{\sigma'(\tau(s))}=\frac{1}{|\gamma'(t)|}$, entonces:
+\begin{equation*}
+\begin{split}
+\kappa(s)&=\frac{1}{|\gamma'(t)|^3}[x'(\tau(s))y''(\tau(s))-x'(\tau(s))x''(\tau(s))]\\
+&=\frac{1}{|\gamma'(t)|^3}\det\begin{pmatrix} x'(\tau(s)) & x''(\tau(s))\\ y'(\tau(s)) & y''(\tau(s))\end{pmatrix}\\
+&=\frac{1}{|\gamma'(t)|^3}\det\begin{pmatrix} x'(t) & x''(t)\\y'(t) & y''(t)\end{pmatrix}
+\end{split}
+\end{equation*}
+
+\end{proof}
+
+\subsection*{Lema: Teorema de Hopf Umlaufsatz}
+Sea $\gamma:[a,b]\rightarrow \mathbb{R}^2$ una curva simple cerrada en el plano y orientada positivamente, entonces el \'indice de totaci\'on de $\gamma$ es $1$ donde el \'indice de rotaci\'on se define: $\frac{1}{2\pi}(\theta(b)-\theta(a))$ y $\theta(t)=\int_{t_{0}}^{t} k(u) du + \theta_{0}$ donde $\dot{\gamma}(a)=(\cos (\theta_{0}), \sin (\theta_{0}))$. %punto en gama
+\begin{proof}
+Denotemos $C = \gamma[a,b]$ y sea  $p \in C$ tal que la recta tangente a $C$ en $p$ (denotada L) esta totalmente contenida a un lado de $C$ y para alguna parametrizaci\'on por longitud de arco $\gamma$, sea $\gamma(a)=p$. Considere el triangulo
+\begin{equation*}
+T={(t_{1}, t_{2})| a \leq t_{1} \leq t_{2} \leq t}
+\end{equation*}
+y definida la funci\'on $\psi:T \rightarrow S^{1}$ como sigue:
+\begin{equation*}
+\psi(t_{1},t_{2})=\begin{cases}
+\gamma'(t_{1}) & \text{ si } t_{1}=t_{2}\\
+\frac{\gamma(t_{2})-\gamma(t_{1})}{|\gamma(t_{2})-\gamma(t_{1})|} & \text{ si } t_{1} \neq t_{2} y {t_{1},t_{2}} \neq {a,b}\\
+-\gamma'(a) & \text{ si } {t_{1},t_{2}}={a,b}
+\end{cases}
+\end{equation*}
+Para la mayor\'ia de elementos en el dominio $\psi(t_{1},t_{2})$ es el vector unitario apuntando de $\gamma(t_{1})$ a $\gamma(t_{2})$, y esta definici\'on asegura que $\psi$ sea continua.
+\\
+Sea $\alpha_{0}$ una parametrizaci\'on para el segmento de $(a,a)$ a $(b,b)$ con $\alpha _{1}:[0,1] \rightarrow T$ una parametrizaci\'on para el segmento de $(a,a)$ a $(a,b)$ y luego el segmento de $(a,b)$ a $(b,b)$ y $\alpha_{s}:[0,1] \rightarrow T$.\\
+Una extensi\'on con $s \in [0,1]$ que se expresa como una familia continua de funciones, esto es, si se considera la funci\'on $\beta:[0,1]\times[0,1] \rightarrow T$ tal que $\beta(s,t)=\alpha_{s}(t)$, y $\beta$ es continua.\\
+\\
+Para todo $s \in [0,1]$, sea $D(s)$ el grado de $\psi \circ \alpha_{s}:[0,1] \rightarrow S^{1}$ por el lema 2.4 de la p\'agina 63 del Tapp, $D$ es continua en $[0,1]$ y como toma valores enteros entonces $D$ es constante.$D(0)$ por definici\'on es el grado del vector tangente unitario a $\gamma$.\\
+\\
+Veamos que $D(1)=1$. Como $\alpha_{1}$ primero recorre el segmento $(a,a)$ a $(a,b)$, $\psi \circ \alpha_{1}$ recorre la mitad de $S^{1}$ y cuando $\alpha_{1}$ recorre de $(a,b)$ a $(b,b)$, $\psi \circ \alpha_{1}$ recorre la otra mitad de $S^{1}$. Luego $D(1)=1=D(0)$.\\
+\\
+Note que por la definici\'on de grado en la p\'agina 63 del Tapp, $D(0)$ es el \'indice de retaci\'on de $\gamma$.
+
+\end{proof}
+\subsection*{Ejercicio 2.7}
+Sea ${\gamma}:\mathbb{R} \rightarrow \mathbb{R}^2$ una curva simple cerrada en el plano  positivamente orientada, de tipo $C^2$ parametrizada por longitud de arco. Muestre que si el periodo de $\gamma$ es $L \in \mathbb{R}^+$ entonces la curvatura total satisface
+\begin{equation*}
+\int_{0}^{L} k(s)ds = 2\pi.
+\end{equation*}
+\begin{proof}
+Como la curva es regular es posible escoger una parametrizaci\'on por longitud de arco tal que $\dot{\gamma}(0)=(1,0)$ (Esto es posible por ser una curva cerrada). Por el teorema de Hopf Umlaufsatz: %gama con puntico
+\begin{equation*}
+(\theta(b)-\theta(a))=2\pi
+\end{equation*}
+Donde $\theta(t)=\int_{0}^{t} k(u) du$. Como la curva se recorre completa en el intervalo (0,L) es posible tomar $b=L$ y $a=0$ luego:
+\begin{equation*}
+\theta(L)-\theta(0)=2\pi
+\end{equation*}
+Como $\dot{\gamma}(0)=(1,0)$, entonces $\theta(0)=0$, luego: %gama con puntito
+\begin{equation*}
+\theta(L)=2\pi
+\end{equation*}
+Y por lo tanto
+\begin{equation*}
+\int_{0}^{L} k(u) du = 2\pi.
+\end{equation*}
+\end{proof}
+\vspace{2in} %Leave more space for comments!
+
+\vspace{3in}
+
+\end{document}
