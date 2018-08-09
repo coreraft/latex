@@ -1,12 +1,12 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.6.17)  6 AUG 2018 17:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.2.26)  9 AUG 2018 08:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
 **taller2.tex
-(/home/juan/Documents/latex/geometria/taller2.tex
+(/home/informatica/Documentos/auth/latex/geometria/taller2.tex
 LaTeX2e <2017-04-15>
-Babel <3.18> and hyphenation patterns for 6 language(s) loaded.
+Babel <3.12> and hyphenation patterns for 84 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
@@ -24,20 +24,21 @@ File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 ) (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2018/02/14 3.18 The Babel package
+Package: babel 2017/06/29 3.12 The Babel package
  (/usr/share/texlive/texmf-dist/tex/generic/babel/switch.def
-File: switch.def 2018/02/14 3.18 Babel switching mechanism
+File: switch.def 2017/06/29 3.12 Babel switching mechanism
 ) (/usr/share/texlive/texmf-dist/tex/generic/babel-spanish/spanish.ldf
 Language: spanish.ldf 2016/03/03 v5.0p Spanish support from the babel system
  (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2018/02/14 3.18 Babel common definitions
+File: babel.def 2017/06/29 3.12 Babel common definitions
+ (/usr/share/texlive/texmf-dist/tex/generic/babel/switch.def
+File: switch.def 2017/06/29 3.12 Babel switching mechanism
+)
 \babel@savecnt=\count87
 \U@D=\dimen103
- (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
-\bbl@dirlevel=\count88
 )
 \es@quottoks=\toks14
-\es@quotdepth=\count89
+\es@quotdepth=\count88
 Package babel Info: Making " an active character on input line 561.
 Package babel Info: Making . an active character on input line 662.
 Package babel Info: Making < an active character on input line 707.
@@ -370,7 +371,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 ) (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 ) (/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
-Package: amsthm 2017/10/31 v2.20.4
+Package: amsthm 2015/03/04 v2.20.2
 \thm@style=\toks18
 \thm@bodyfont=\toks19
 \thm@headfont=\toks20
@@ -381,7 +382,7 @@ Package: amsthm 2017/10/31 v2.20.4
 \thm@headsep=\skip45
 \dth@everypar=\toks23
 ) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2017/09/02 v2.17a AMS math features
+Package: amsmath 2016/11/05 v2.16a AMS math features
 \@mathmargin=\skip46
 
 For additional information on amsmath, use the `?' option.
@@ -397,13 +398,13 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 ) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count90
+\inf@bad=\count89
 LaTeX Info: Redefining \frac on input line 213.
-\uproot@=\count91
-\leftroot@=\count92
+\uproot@=\count90
+\leftroot@=\count91
 LaTeX Info: Redefining \overline on input line 375.
-\classnum@=\count93
-\DOTSCASE@=\count94
+\classnum@=\count92
+\DOTSCASE@=\count93
 LaTeX Info: Redefining \ldots on input line 472.
 LaTeX Info: Redefining \dots on input line 475.
 LaTeX Info: Redefining \cdots on input line 596.
@@ -412,15 +413,15 @@ LaTeX Info: Redefining \cdots on input line 596.
 \big@size=\dimen106
 LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
-\macc@depth=\count95
-\c@MaxMatrixCols=\count96
+\macc@depth=\count94
+\c@MaxMatrixCols=\count95
 \dotsspace@=\muskip10
-\c@parentequation=\count97
-\dspbrk@lvl=\count98
+\c@parentequation=\count96
+\dspbrk@lvl=\count97
 \tag@help=\toks25
-\row@=\count99
-\column@=\count100
-\maxfields@=\count101
+\row@=\count98
+\column@=\count99
+\maxfields@=\count100
 \andhelp@=\toks26
 \eqnshift@=\dimen107
 \alignsep@=\dimen108
@@ -434,7 +435,7 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 \mathdisplay@stack=\toks28
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
-) (/home/juan/Documents/latex/geometria/taller2.aux
+) (/home/informatica/Documentos/auth/latex/geometria/taller2.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 )
@@ -472,20 +473,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 96--98
 
  []
 
-[2] [3] (/home/juan/Documents/latex/geometria/taller2.aux
+[2] [3] (/home/informatica/Documentos/auth/latex/geometria/taller2.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 ) ) 
 Here is how much of TeX's memory you used:
- 2442 strings out of 494861
- 28636 string characters out of 6178804
- 92488 words of memory out of 5000000
- 5756 multiletter control sequences out of 15000+600000
+ 2408 strings out of 492990
+ 28133 string characters out of 6135005
+ 95239 words of memory out of 5000000
+ 5957 multiletter control sequences out of 15000+600000
  13401 words of font info for 55 fonts, out of 8000000 for 9000
- 40 hyphenation exceptions out of 8191
+ 1141 hyphenation exceptions out of 8191
  27i,20n,30p,601b,359s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on /home/juan/Documents/latex/geometria/taller2.pdf (3 pages, 114170 bytes).
+Output written on /home/informatica/Documentos/auth/latex/geometria/taller2.pdf (3 pages, 114205 bytes).
 PDF statistics:
  58 PDF objects out of 1000 (max. 8388607)
  41 compressed objects within 1 object stream
